@@ -12,3 +12,4 @@ git commit -m "Descripción de los cambios a medida que se avanza o finaliza el 
 git push (para subir a nuestro git hub)
 
 Link de mi video: https://www.loom.com/share/fea73d152f0247cba55e214aa07e542b?sid=dbcc019a-dbb8-4e6d-930a-4b19094a4bc4
+
