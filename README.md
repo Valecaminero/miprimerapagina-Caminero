@@ -7,4 +7,8 @@ activarlo: nombre_del_entorno\Scripts\Activate.ps1
 
 python manage.py runserver
 
+git add . (añadimos archivos modificados todos y si se quiere agregar uno se agrega el nombre del archivo en vez del punto) 
+git commit -m "Descripción de los cambios a medida que se avanza o finaliza el trabajo" 
+git push (para subir a nuestro git hub)
+
 Link de mi video: https://www.loom.com/share/fea73d152f0247cba55e214aa07e542b?sid=dbcc019a-dbb8-4e6d-930a-4b19094a4bc4
