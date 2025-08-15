@@ -1,0 +1,16 @@
+{% extends "padre.html" %}
+{% block content %}
+
+<h2>Personal</h2>
+
+{% if user.avatar and user.avatar.imagen %}
+    <img style="width: 200px; heigth: 200px" src="{{user.avatar.imagen.url}}" alt="Imagen de avatar">
+{% endif %}
+
+
+<p> Nombre de usuario: {{user.username}}</p>
+
+<p> Primer Nombre: {{user.first_name}}</p>
+<p> Segundo Nombre: {{user.last_name}}</p>
+<a href="{% url 'edit_profile' %}">Editar Perfil</a>
+{% endblock %}

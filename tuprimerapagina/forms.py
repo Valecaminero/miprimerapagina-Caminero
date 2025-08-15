@@ -1,4 +1,5 @@
 from django import forms
+from .models import Auto, Curso
 
 class cursoform(forms.Form):
     nombre = forms.CharField()
@@ -23,3 +24,13 @@ class ProfesorForm(forms.Form):
     edad = forms.IntegerField(min_value=10, max_value=100)
     fecha_nacimiento = forms.DateField(
         widget=forms.DateInput(attrs={'type': 'date'}))
+    
+class AutoForm(forms.ModelForm):
+    class Meta:
+        model = Auto
+        fields = ['modelo', 'marca', 'descripcion']
+
+class CursoForm(forms.ModelForm):
+    class Meta:
+        model = Curso
+        fields = ['nombre', 'descripcion', 'duracion_semanas', 'fecha_inicio']

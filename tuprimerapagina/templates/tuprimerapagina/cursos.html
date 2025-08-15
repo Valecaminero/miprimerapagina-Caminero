@@ -3,9 +3,7 @@
 {% block title %} Cursos {% endblock %}
 
 {% block content %}
-
     <h2>Buscar Curso</h2>
-
     <form method="GET" action="{% url 'buscar-cursos' %}">
         <input type="text" name="nombre" placeholder="Buscar curso..." value="{{ nombre }}">
         <button type="submit">Buscar</button>
@@ -15,10 +13,16 @@
     <ul>
         {% for curso in cursos %}
             <li>{{ curso.nombre }}</li>
-        {% empty %}
+            <a href="{% url 'ver_curso' curso.pk %}">Ver Detalle</a>
+
+            <form method="post" action="{% url 'eliminar_curso' curso.pk %}" style="display:inline;">
+                {% csrf_token %}
+                <a href="{% url 'editar_curso' curso.pk %}">Editar</a>
+                <button type="submit" style="color:red; background:none; border:none; cursor:pointer;">Eliminar</button>
+            </form>
+            {% empty %}
             <li>No hay cursos disponibles.</li>
         {% endfor %}
     </ul>
-    
     <a href="{% url 'curso' %}">Agregar Curso</a>
 {% endblock %}
